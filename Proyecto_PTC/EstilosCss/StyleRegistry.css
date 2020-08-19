@@ -1,0 +1,27 @@
+﻿body {
+    background: #c3edea;
+}
+
+.container {
+    width: 500px;
+    height: 470px;
+    text-align: center;
+    background-color: cornflowerblue;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.container img {
+    width: 190px;
+    height: 166px;
+    border-radius: 50%;
+    margin-top: -60px;
+    margin-bottom: 30px;
+}
+.h1 {
+    text-align: center;
+}
+
+.h2 {
+    text-align: center;
+}

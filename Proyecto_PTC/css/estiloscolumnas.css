@@ -1,0 +1,73 @@
+
+.container1 {
+    display: flex;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+.p1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 300;
+}
+
+.flex {
+    display: flex;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.columna {
+    background: rgb(228, 228, 228);
+    color: #1e2022;
+    border: 1px solid #1e2022;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.btnprecio1 {
+    background: tomato;
+    display: block;
+    padding: 10px;
+    color: #eeeeee;
+    margin-bottom: 10px;
+}
+
+.btnprecio1:hover {
+    background: #46b7b9;
+    color: #1e2022;
+}
+
+.pa {
+    display: inline-block;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.btnprecio2 {
+    background: blue;
+    display: block;
+    padding: 10px;
+    color: #eeeeee;
+    margin-bottom: 10px;
+    justify-content: center;
+    margin: auto;
+    width: 400px;
+    text-indent: 160px;
+}
+
+    .btnprecio2:hover {
+        background: #46b7b9;
+        color: #eeeeee;
+    }
+
+.o {
+    background: #46b7b9;
+    padding: 10px;
+}

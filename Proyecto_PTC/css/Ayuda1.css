@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background: #c3edea;
+  }
+  header{
+    width: 100%;
+    height: 50px;
+    background: #333;
+    color: #fff;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+  .contener{
+    width: 100%;
+    margin: auto;
+  }
+  #menu-bar{
+    display: none;
+  }
+  header label{
+    float: right;
+    font-size: 28px;
+    margin: 8px 0;
+    cursor: pointer;
+  }
+  h1{
+    float: left;
+  }
+  header .contener{
+    display: table;
+  }
+  .menu{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(51, 51, 51, 0.9);
+    transition: all 0.5s;
+    transform: translateX(-100%);
+  }
+  .menu .n2{
+    display: block;
+    color: #fff;
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .menu .n2:hover{
+    background: rgba(255, 255, 255, 0.3);
+  }
+  #menu-bar:checked ~ .menu{
+    transform: translateX(0%);
+  }
+  section{
+      width: 100%;
+      margin-bottom: 25px;
+  }
+  #banner{
+      margin-top: 50px;
+      position: relative;
+  }
+  .i1{
+      width: 100%;
+      height: 0%;
+  }
+  .ba{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      color: #fff;
+  }
+  .ban{
+      font-size: 28px;
+  }
+  .l1{
+      display: block;
+      width: 150px;
+      color:#fff;
+      text-decoration: none;
+      padding: 7px;
+      margin-top: 10px;
+      border: 3px solid #fff;
+  }
+  .l1:hover{
+      background: #fa1616;
+  }
+  h4{
+    text-align: center;
+  }
+ #bienvenidos{
+     text-align: center;
+     font-family: "Oleo Script", cursive;
+ }
+ #bienvenidos .b1{
+  font-family: "Oleo Script", cursive;
+ }
+ #bienvenidos .p1{
+  font-family: 'Berkshire Swash', cursive;
+ }
+ #blog .contenedor{
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+ } 
+ #blog article{
+     margin: 10px;
+ }
+#blog img{
+  width: 100%;
+  max-width: 1220px;
+}
+#info{
+  background: #333333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+#info .c1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.info-hotel{
+  margin: 20px;
+}
+.info-hotel img{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 7px solid #fff;
+}
+footer .conte{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+.copy{
+  font-size: 20px;
+}
+.sociales{
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+}
+.sociales a{
+  color: #333;
+  text-decoration: none;
+}
+.buton1{
+  background: red;
+  color:aliceblue;
+  padding: 10px;
+}
+.buton1:hover{
+  background: darkorange;
+  color: black;
+}
+.button2{
+  background-color: chartreuse;
+  color: black;
+  padding: 10px;
+  border-left: 100px;
+}
+.button2:hover{
+  background: blue;
+  color: aliceblue;
+}
+.n1{
+  justify-content: flex-end;
+}
+.fa{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: aliceblue;
+}
+.fan{
+  font-size: 28px;
+}
+.l1{
+  display: block;
+  width: 150px;
+  color:#fff;
+  text-decoration: none;
+  padding: 7px;
+  margin-top: 10px;
+  border: 3px solid #fff;
+}
+.l1:hover{
+  background: #fa1616;
+}
+@media(min-width:1024px){
+  .menu{
+    position: static;
+    width: auto;
+    height: auto;
+    transform: translateX(0%);
+    float: right;
+    display: flex;
+  }
+  .menu .n2{
+    border: none;
+  }
+  header label{
+    display: none;
+  }
+}
+@media(min-width:480px){
+  #banner .ban{
+    font-size: 48px;
+  }
+  #banner .l1{
+    margin-top: 25px;
+  }
+}
+@media(min-width:768px){
+  #banner{
+    height: 300px;
+    overflow: hidden;
+  }
+  #banner .i1{
+    height: auto;
+    margin-top: -100px;
+  }
+}
+@media(min-width:1024px){
+  #banner{
+    height: 300px;
+    overflow: hidden;
+  }
+  #banner .i1{
+    height: auto;
+    margin-top: -200px;
+  }
+}
+
+
+
+  

@@ -1,0 +1,713 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1DF3E7E1-A898-4068-B05E-FF8209A591EB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proyecto_PTC</RootNamespace>
+    <AssemblyName>Proyecto_PTC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44337</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\Downloads\MySql.Data.DLL</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Stripe.net, Version=37.23.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.net.37.23.0\lib\net461\Stripe.net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Alerts\SweetAlerts.js" />
+    <Content Include="Ayuda.html" />
+    <Content Include="carros\1.1.jpg" />
+    <Content Include="carros\1.3.jpg" />
+    <Content Include="carros\1.jpg" />
+    <Content Include="carros\1.PNG" />
+    <Content Include="carros\10.jpg" />
+    <Content Include="carros\11.jpg" />
+    <Content Include="carros\12.jpg" />
+    <Content Include="carros\1t.jpg" />
+    <Content Include="carros\2.2.jpg" />
+    <Content Include="carros\2.3.jpg" />
+    <Content Include="carros\2.jpg" />
+    <Content Include="carros\2020-kia-stinger-gts-107-1555528650.jpg" />
+    <Content Include="carros\2t.jpg" />
+    <Content Include="carros\3.2.jpg" />
+    <Content Include="carros\3.3.jpg" />
+    <Content Include="carros\3.jpg" />
+    <Content Include="carros\3t.jpg" />
+    <Content Include="carros\4.jpg" />
+    <Content Include="carros\5.jpg" />
+    <Content Include="carros\6.jpg" />
+    <Content Include="carros\7.jpg" />
+    <Content Include="carros\8.jpg" />
+    <Content Include="carros\9.jpg" />
+    <Content Include="css\app.css" />
+    <Content Include="css\articulos.css" />
+    <Content Include="css\Ayuda.css" />
+    <Content Include="css\Ayuda1.css" />
+    <Content Include="css\Banner.css" />
+    <Content Include="css\bootstrap-grid.css" />
+    <Content Include="css\bootstrap-grid.min.css" />
+    <Content Include="css\bootstrap-reboot.css" />
+    <Content Include="css\bootstrap-reboot.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\estilos.css" />
+    <Content Include="css\estilos2.css" />
+    <Content Include="css\estilos3.css" />
+    <Content Include="css\estilos4.css" />
+    <Content Include="css\estilos45.css" />
+    <Content Include="css\estilos5.css" />
+    <Content Include="css\estiloscolumnas.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\fontello.css" />
+    <Content Include="css\hotel.css" />
+    <Content Include="css\hotel45.css" />
+    <Content Include="css\icons.css" />
+    <Content Include="css\Login.css" />
+    <Content Include="css\principal.css" />
+    <Content Include="css\Rent a car.css" />
+    <Content Include="css\StyleSheet1.css" />
+    <Content Include="delxs.html" />
+    <Content Include="Doble.html" />
+    <Content Include="Dobledeluxe.html" />
+    <Content Include="Doblepiscina.html" />
+    <Content Include="doblesuite.html" />
+    <Content Include="EstilosCss\StyleLogin.css" />
+    <Content Include="EstilosCss\StyleRegistry.css" />
+    <Content Include="flexslider.css" />
+    <Content Include="fonts\flexslider-icon.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="font\fontello.svg" />
+    <Content Include="Hotel.html" />
+    <Content Include="hotelescss\rocasunza.css" />
+    <Content Include="hotelescss\Rocasunzal.css" />
+    <Content Include="hotelescss\Suite.css" />
+    <Content Include="hotelesimg\Interconti\1.1.jpg" />
+    <Content Include="hotelesimg\Interconti\1.jpg" />
+    <Content Include="hotelesimg\Interconti\10.1.jpg" />
+    <Content Include="hotelesimg\Interconti\10.jpg" />
+    <Content Include="hotelesimg\Interconti\11.jpg" />
+    <Content Include="hotelesimg\Interconti\12.3.jpg" />
+    <Content Include="hotelesimg\Interconti\13.jpg" />
+    <Content Include="hotelesimg\Interconti\14.jpg" />
+    <Content Include="hotelesimg\Interconti\15.jpg" />
+    <Content Include="hotelesimg\Interconti\2.1.jpg" />
+    <Content Include="hotelesimg\Interconti\2.jpg" />
+    <Content Include="hotelesimg\Interconti\3.jpg" />
+    <Content Include="hotelesimg\Interconti\31718476_10156222800301425_3006774172907995136_o - copia.jpg" />
+    <Content Include="hotelesimg\Interconti\31718476_10156222800301425_3006774172907995136_o.jpg" />
+    <Content Include="hotelesimg\Interconti\4.jpg" />
+    <Content Include="hotelesimg\Interconti\a.jpg" />
+    <Content Include="hotelesimg\Interconti\buffet.jpg" />
+    <Content Include="hotelesimg\Interconti\comodidades.jpg" />
+    <Content Include="hotelesimg\Interconti\comodidadesa.jpg" />
+    <Content Include="hotelesimg\Interconti\df.jpg" />
+    <Content Include="hotelesimg\Interconti\fachada_xl.jpg" />
+    <Content Include="hotelesimg\Interconti\ggg.jpg" />
+    <Content Include="hotelesimg\Interconti\gym.jpg" />
+    <Content Include="hotelesimg\Interconti\hb.jpg" />
+    <Content Include="hotelesimg\Interconti\hb1.jpg" />
+    <Content Include="hotelesimg\Interconti\hg.jpg" />
+    <Content Include="hotelesimg\Interconti\hotel-real-intercontinental-tegucigalpa-banio-9ac17a5 %281%29.jpg" />
+    <Content Include="hotelesimg\Interconti\hotel-real-intercontinental-tegucigalpa-banio-9ac17a5.jpg" />
+    <Content Include="hotelesimg\Interconti\hx.jpg" />
+    <Content Include="hotelesimg\Interconti\images.jpg" />
+    <Content Include="hotelesimg\Interconti\presi.jpg" />
+    <Content Include="hotelesimg\Interconti\presid.jpg" />
+    <Content Include="hotelesimg\Interconti\rb.jpg" />
+    <Content Include="hotelesimg\Interconti\real-intercontinental-san-salvador_15526403276.jpg" />
+    <Content Include="hotelesimg\Interconti\rrrrr.jpg" />
+    <Content Include="hotelesimg\Interconti\sdddd.jpg" />
+    <Content Include="hotelesimg\Interconti\spa.jpg" />
+    <Content Include="hotelesimg\Interconti\spas.jpg" />
+    <Content Include="hotelesimg\Interconti\unnamed.jpg" />
+    <Content Include="hotelesimg\Interconti\w.jpg" />
+    <Content Include="hotelesimg\Interconti\x.jpg" />
+    <Content Include="hotelesimg\Interconti\xc.jpg" />
+    <Content Include="hotelesimg\Interconti\xcc.jpg" />
+    <Content Include="hotelesimg\Interconti\xe.jpg" />
+    <Content Include="hotelesimg\Interconti\xu.jpg" />
+    <Content Include="hotelesimg\Interconti\xv.jpg" />
+    <Content Include="hotelesimg\Interconti\y.jpg" />
+    <Content Include="hotelesimg\Interconti\z.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\1-Double-Plus-Suite.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\1-Double-suite.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\1-Oceanfront-Triple-Suite.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\1-Oceantfront-King-Suite.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\1-Poolside-Double-Room.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\1-white-sheets-triple-plus.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\10.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\11.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\12.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\2.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\22.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\3.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\4.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\5.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\6.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\7.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\8.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\9.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Doble\1-Poolside-Double-Room.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Doble\Anotación 2020-08-07 091106.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Doble\Anotación 2020-08-07 091131.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Doble\Anotación 2020-08-07 093814.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Doble\Anotación 2020-08-07 093923.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Doble\Anotación 2020-08-07 093944.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Doble\c.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Doble\lg_landscape_htgfzryu-1259251321.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Doble\q.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Doble\roca-main2-1024x683.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\dp\1-Double-Plus-Suite.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\dp\Anotación 2020-08-07 091131.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\dp\Anotación 2020-08-07 175359.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\dp\Anotación 2020-08-07 175420.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\dp\Anotación 2020-08-07 175438.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\dp\Anotación 2020-08-07 175452.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\dp\Anotación 2020-08-07 175507.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\dp\gt.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\dp\lg_landscape_htgfzryu-1259251321.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\dp\roca-main2-1024x683.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\es-una-playa-llena-de.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\ffff.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\ggggg.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\ali.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\Anotación 2020-08-07 091031.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\Anotación 2020-08-07 091106.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\Anotación 2020-08-07 091131.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\Anotación 2020-08-07 092624.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\extras.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\extras1.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\lg_landscape_htgfzryu-1259251321.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\roca-hero-poolsideking - copia.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\roca-hero-poolsideking.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Habitación doble\roca-main2-1024x683.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\hotelroc1-2400x900.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\hotelroca1-2400x900.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\images %281%29.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\images %282%29.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\images.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\img1.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\imgp.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\ji3.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\king-sea-view-suite %281%29.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\king-sea-view-suite.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\lecciones de surf.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\ostrovok-6557184-123d6d22bb3754cf67a8bd61ed6d121e81d33bf1-579273.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\p2.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\roca-hero-poolsideking.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\roca-sunzal-hotel-restaurant.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sd\1-Double-suite.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sd\Anotación 2020-08-07 091106.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sd\Anotación 2020-08-07 091131.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sd\Anotación 2020-08-07 093944.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sd\Anotación 2020-08-07 104524.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sd\Anotación 2020-08-07 104548.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sd\Anotación 2020-08-07 104610.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sd\g1.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sd\lg_landscape_htgfzryu-1259251321.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sd\roca-main2-1024x683.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\sunzal_logo_white_2.png" />
+    <Content Include="hotelesimg\Rocasunzal\timthumb.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\tp\1-white-sheets-triple-plus.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\tp\Anotación 2020-08-07 091106.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\tp\Anotación 2020-08-07 091131.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\tp\Anotación 2020-08-07 093944.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\tp\Anotación 2020-08-07 182710.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\tp\Anotación 2020-08-07 182730.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\tp\Anotación 2020-08-07 182908.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\tp\fg.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\tp\lg_landscape_htgfzryu-1259251321.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\tp\roca-main2-1024x683.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\triple-sea-view-suite.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Triple\2-Triple-room-beds.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Triple\Anotación 2020-08-07 091131.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Triple\Anotación 2020-08-07 093944.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Triple\Anotación 2020-08-07 095523.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Triple\Anotación 2020-08-07 095548.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Triple\Anotación 2020-08-07 095609.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Triple\Anotación 2020-08-07 095627.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Triple\kñ.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Triple\lg_landscape_htgfzryu-1259251321.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\Triple\roca-main2-1024x683.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\unnamed %281%29.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\unnamed.jpg" />
+    <Content Include="hotelesimg\Rocasunzal\¡11.jpg" />
+    <Content Include="icon\contact.png" />
+    <Content Include="icon\facebook.png" />
+    <Content Include="icon\google-plus.png" />
+    <Content Include="icon\house.png" />
+    <Content Include="icon\instagram.png" />
+    <Content Include="icon\pinterest.png" />
+    <Content Include="icon\smartphone.png" />
+    <Content Include="icon\tumblr.png" />
+    <Content Include="icon\twitter.png" />
+    <Content Include="imagenes\1-mercedes-benz-cla-2019-rt-hero-front.jpg" />
+    <Content Include="imagenes\130310020.jpg" />
+    <Content Include="imagenes\15TDIthairhd_NP300DChelios011.jpg.ximg.l_full_m.smart.jpg" />
+    <Content Include="imagenes\160644415.jpg" />
+    <Content Include="imagenes\178192455.jpg" />
+    <Content Include="imagenes\188021208.jpg" />
+    <Content Include="imagenes\2008_Toyota_Land_Cruiser.jpg" />
+    <Content Include="imagenes\2017-12-29.jpg" />
+    <Content Include="imagenes\2018_Toyota_Aygo_x-play_1.0.jpg" />
+    <Content Include="imagenes\2019042301_Kia_SoulEV.jpg" />
+    <Content Include="imagenes\2020-nissan-nissan-leaf-sv-plus-2-source-1-1578677791.jpg" />
+    <Content Include="imagenes\2021-Toyota-Supra-4-Cylinder-17.jpg" />
+    <Content Include="imagenes\222222.jpg" />
+    <Content Include="imagenes\243580221.jpg" />
+    <Content Include="imagenes\245801054.jpg" />
+    <Content Include="imagenes\25886-n.jpg" />
+    <Content Include="imagenes\370Z.jpg" />
+    <Content Include="imagenes\87814010-centro-de-soporte-técnico-servicio-al-cliente-internet-concepto-de-tecnología-empresarial-.jpg" />
+    <Content Include="imagenes\acant.jpg" />
+    <Content Include="imagenes\alla arriba.jpg" />
+    <Content Include="imagenes\andalu.jpg" />
+    <Content Include="imagenes\argueta.jpg" />
+    <Content Include="imagenes\ast hotel.jpg" />
+    <Content Include="imagenes\Atami resort.jpg" />
+    <Content Include="imagenes\b1b1.jpg" />
+    <Content Include="imagenes\bahia del sol.jpg" />
+    <Content Include="imagenes\banner.jpg" />
+    <Content Include="imagenes\bannerp.jpg" />
+    <Content Include="imagenes\barcelo.jpg" />
+    <Content Include="imagenes\barras.png" />
+    <Content Include="imagenes\bocas olasd.jpg" />
+    <Content Include="imagenes\c-hr.jpg" />
+    <Content Include="imagenes\c2.jfif" />
+    <Content Include="imagenes\c3.jfif" />
+    <Content Include="imagenes\cabanas-y-restaurante.jpg" />
+    <Content Include="imagenes\camry.jpg" />
+    <Content Include="imagenes\casa blanca.jpg" />
+    <Content Include="imagenes\casa de mar hotel and villas.jpg" />
+    <Content Include="imagenes\casa de mar.jpg" />
+    <Content Include="imagenes\casa miramar.jpg" />
+    <Content Include="imagenes\ciudad blanca.jpg" />
+    <Content Include="imagenes\Coaster_Blanco-Beige.png" />
+    <Content Include="imagenes\coco resort.jpg" />
+    <Content Include="imagenes\concepto-registro-online-diseno-plano_23-2147976705.jpg" />
+    <Content Include="imagenes\corolla.jpg" />
+    <Content Include="imagenes\d.jpg" />
+    <Content Include="imagenes\dd.jpg" />
+    <Content Include="imagenes\ddddd.jpg" />
+    <Content Include="imagenes\decameron.jpg" />
+    <Content Include="imagenes\defe.jpg" />
+    <Content Include="imagenes\descarga %281%29.jpg" />
+    <Content Include="imagenes\descarga %2810%29.jpg" />
+    <Content Include="imagenes\descarga %2811%29.jpg" />
+    <Content Include="imagenes\descarga %2812%29.jpg" />
+    <Content Include="imagenes\descarga %2813%29.jpg" />
+    <Content Include="imagenes\descarga %2814%29.jpg" />
+    <Content Include="imagenes\descarga %2815%29.jpg" />
+    <Content Include="imagenes\descarga %282%29.jpg" />
+    <Content Include="imagenes\descarga %283%29.jpg" />
+    <Content Include="imagenes\descarga %284%29.jpg" />
+    <Content Include="imagenes\descarga %285%29.jpg" />
+    <Content Include="imagenes\descarga %286%29.jpg" />
+    <Content Include="imagenes\descarga %287%29.jpg" />
+    <Content Include="imagenes\descarga %288%29.jpg" />
+    <Content Include="imagenes\descarga %289%29.jpg" />
+    <Content Include="imagenes\descarga.jpg" />
+    <Content Include="imagenes\df.jpg" />
+    <Content Include="imagenes\dos sauces.jpg" />
+    <Content Include="imagenes\download.jfif" />
+    <Content Include="imagenes\edicio01.PNG" />
+    <Content Include="imagenes\edicion 1.PNG" />
+    <Content Include="imagenes\edicion 2.PNG" />
+    <Content Include="imagenes\edicion3.PNG" />
+    <Content Include="imagenes\edicion4.PNG" />
+    <Content Include="imagenes\edicion6.jpg" />
+    <Content Include="imagenes\edicion7.PNG" />
+    <Content Include="imagenes\EGWprynXUAEdjD4.jpg" />
+    <Content Include="imagenes\el carmen.jpg" />
+    <Content Include="imagenes\el limo.jpg" />
+    <Content Include="imagenes\el mas grande.jpg" />
+    <Content Include="imagenes\el pacifico hotell.jpg" />
+    <Content Include="imagenes\el pital hig.jpg" />
+    <Content Include="imagenes\el sunzalito.jpg" />
+    <Content Include="imagenes\Entre pinos.jpg" />
+    <Content Include="imagenes\estero y mar.jpg" />
+    <Content Include="imagenes\farrones.jpg" />
+    <Content Include="imagenes\fffffffffffffffffffff.jpg" />
+    <Content Include="imagenes\FGSUDAH7QBDVRI74OEEXEFQ4FY.jpg" />
+    <Content Include="imagenes\finca-agroturistica-casa-grande.jpg" />
+    <Content Include="imagenes\flore.jpg" />
+    <Content Include="imagenes\fondo.jpg" />
+    <Content Include="imagenes\fondod.jpg" />
+    <Content Include="imagenes\frontal.3085134.jpg" />
+    <Content Include="imagenes\frontolateral.961306.jpg" />
+    <Content Include="imagenes\g+.ico" />
+    <Content Include="imagenes\garden hotel.jpg" />
+    <Content Include="imagenes\graciela.jpg" />
+    <Content Include="imagenes\h1.jpg" />
+    <Content Include="imagenes\h2.jpg" />
+    <Content Include="imagenes\h3.jpg" />
+    <Content Include="imagenes\h4.jpg" />
+    <Content Include="imagenes\hhhhhhhhhh.jpg" />
+    <Content Include="imagenes\hiace_banner_768x768-1.png" />
+    <Content Include="imagenes\holiday.jpg" />
+    <Content Include="imagenes\hostal-villa-blanca-metapan.jpg" />
+    <Content Include="imagenes\hotel-villa-maria.jpg" />
+    <Content Include="imagenes\hotel.jpg" />
+    <Content Include="imagenes\hotelelpitalhigland.jpg" />
+    <Content Include="imagenes\hyundai.jpg" />
+    <Content Include="imagenes\images.jpg" />
+    <Content Include="imagenes\infoguia-entre-pinos-hotel-02.jpg" />
+    <Content Include="imagenes\information_items_property_16141934.jpg" />
+    <Content Include="imagenes\inn la union.jpg" />
+    <Content Include="imagenes\inn.jpg" />
+    <Content Include="imagenes\inn1.jpg" />
+    <Content Include="imagenes\instagram_f_icon-icons.com_65485.ico" />
+    <Content Include="imagenes\izalco hotel.jpg" />
+    <Content Include="imagenes\jeep.jpg" />
+    <Content Include="imagenes\jeepe.jpg" />
+    <Content Include="imagenes\ka.jpg" />
+    <Content Include="imagenes\kaa.jpg" />
+    <Content Include="imagenes\KIA-stinger-gt-naranja-dm-1.jpg" />
+    <Content Include="imagenes\kia-stonic-cc-6_1920x1600c.jpg" />
+    <Content Include="imagenes\kia_pressrelease_2018_PRESS_1920x1080_front_bg.jpg" />
+    <Content Include="imagenes\lambo.jpg" />
+    <Content Include="imagenes\las hojas.jpg" />
+    <Content Include="imagenes\LETR T.PNG" />
+    <Content Include="imagenes\letra h.jpg.ico" />
+    <Content Include="imagenes\Logo car.PNG" />
+    <Content Include="imagenes\Logo.PNG" />
+    <Content Include="imagenes\Logo1.PNG" />
+    <Content Include="imagenes\Logo3.PNG" />
+    <Content Include="imagenes\los mangos h.jpg" />
+    <Content Include="imagenes\Maclean.jpg" />
+    <Content Include="imagenes\mandalas eco villas.jpg" />
+    <Content Include="imagenes\marrot.jpg" />
+    <Content Include="imagenes\maxresdefault %281%29.jpg" />
+    <Content Include="imagenes\maxresdefault %282%29.jpg" />
+    <Content Include="imagenes\maxresdefault.jpg" />
+    <Content Include="imagenes\menu-button_icon-icons.com_72989.ico" />
+    <Content Include="imagenes\mercedes benz.jpg" />
+    <Content Include="imagenes\mercedes-benz-gla-2020.jpg" />
+    <Content Include="imagenes\mercedes-benz_glb_2020.jpg" />
+    <Content Include="imagenes\mercedes.jpg" />
+    <Content Include="imagenes\micro.jpg" />
+    <Content Include="imagenes\microbus.jpg" />
+    <Content Include="imagenes\microbuses2.jpg" />
+    <Content Include="imagenes\mizata hotel.jpg" />
+    <Content Include="imagenes\modern-styled-house-with-overviewing-swimming-pool-2034335.jpg" />
+    <Content Include="imagenes\NAZ_65ea73bc78964dd39700a6d3b7a0fa4a.jpg" />
+    <Content Include="imagenes\nice-place-to-have-a.jpg" />
+    <Content Include="imagenes\niro.jpg" />
+    <Content Include="imagenes\nissan-gt-r-nismo-2020-0419-005.jpg" />
+    <Content Include="imagenes\nissan-juke-2020-52_1920x1600c.jpg" />
+    <Content Include="imagenes\nissan-micra-00000.jpg" />
+    <Content Include="imagenes\nissan-navara-2019-2_1920x1600c.jpg" />
+    <Content Include="imagenes\Nissan-Qashqai-2018-C01a.jpg" />
+    <Content Include="imagenes\nissan-x-trail-2018-p.jpg" />
+    <Content Include="imagenes\nissan.jpg" />
+    <Content Include="imagenes\pacific sunrise.jpg" />
+    <Content Include="imagenes\palm-trees-at-night-258154.jpg" />
+    <Content Include="imagenes\palo verde.jpg" />
+    <Content Include="imagenes\paraiso escondido.jpg" />
+    <Content Include="imagenes\pexels-alifia-harina-2779503.jpg" />
+    <Content Include="imagenes\pexels-anna-shvets-4482900.jpg" />
+    <Content Include="imagenes\pexels-artem-saranin-1685111.jpg" />
+    <Content Include="imagenes\pexels-mike-120049.jpg" />
+    <Content Include="imagenes\pexels-pixabay-356079.jpg" />
+    <Content Include="imagenes\pexels-sarmad-mughal-305070.jpg" />
+    <Content Include="imagenes\pexels-torsten-dettlaff-70912.jpg" />
+    <Content Include="imagenes\pickup.jpg" />
+    <Content Include="imagenes\plaza.jpg" />
+    <Content Include="imagenes\ppacific paradise.jpg" />
+    <Content Include="imagenes\prius.jpg" />
+    <Content Include="imagenes\punta roca.jpg" />
+    <Content Include="imagenes\puro surf.jpg" />
+    <Content Include="imagenes\r.PNG" />
+    <Content Include="imagenes\r1.jfif" />
+    <Content Include="imagenes\r1.PNG" />
+    <Content Include="imagenes\rey.jpg" />
+    <Content Include="imagenes\rwrwrwerwrerwe.jpg" />
+    <Content Include="imagenes\sabas.jpg" />
+    <Content Include="imagenes\sal y luz.jpg" />
+    <Content Include="imagenes\seltos.jpg" />
+    <Content Include="imagenes\six-seat-mercedes-benz-g-class-by-hofele.jpg" />
+    <Content Include="imagenes\social_facebook_fb_35.ico" />
+    <Content Include="imagenes\Solo letras.PNG" />
+    <Content Include="imagenes\sorento.jpg" />
+    <Content Include="imagenes\sport.jpg" />
+    <Content Include="imagenes\sportage.jpg" />
+    <Content Include="imagenes\sunza.jpg" />
+    <Content Include="imagenes\tortuga village.jpg" />
+    <Content Include="imagenes\toyo.jpg" />
+    <Content Include="imagenes\toyotafons.jpg" />
+    <Content Include="imagenes\toyota_rav4_2jpg_001.jpg" />
+    <Content Include="imagenes\twitter-3_icon-icons.com_50735.ico" />
+    <Content Include="imagenes\una-excelente-opcion.jpg" />
+    <Content Include="imagenes\USC70MBCBP1A021001.jpg" />
+    <Content Include="imagenes\vehiculo.jpg" />
+    <Content Include="imagenes\villa blanca.jpg" />
+    <Content Include="imagenes\Villa_Serena_Esc.jpeg" />
+    <Content Include="imagenes\white-mercedes-benz-cars-120049.jpg" />
+    <Content Include="imagenes\X81C_URVAN-W_02n01-2014.jpg..jpg.ximg.l_12_m.smart %281%29.jpg" />
+    <Content Include="imagenes\X81C_URVAN-W_02n01-2014.jpg..jpg.ximg.l_12_m.smart.jpg" />
+    <Content Include="imagenes\yaris.jpg" />
+    <Content Include="imagenes\yaris1.jpg" />
+    <Content Include="Img\2x1.jpg" />
+    <Content Include="Img\balerinas.jpg" />
+    <Content Include="Img\BaZhaHei.jpg" />
+    <Content Include="Img\botas.jpg" />
+    <Content Include="Img\BrogueColornegro.jpg" />
+    <Content Include="Img\caballero.png" />
+    <Content Include="Img\D1.jpg" />
+    <Content Include="Img\D2.jpg" />
+    <Content Include="Img\D3.jpg" />
+    <Content Include="Img\D4.jpg" />
+    <Content Include="Img\D5.jpg" />
+    <Content Include="Img\D6.jpg" />
+    <Content Include="Img\escolar_boy.jpg" />
+    <Content Include="Img\escolar_girl.jpg" />
+    <Content Include="Img\Favicon.gif" />
+    <Content Include="Img\Flexi.jpg" />
+    <Content Include="Img\fondo.jpg" />
+    <Content Include="Img\Fondo12.jpg" />
+    <Content Include="Img\Francesita.jpg" />
+    <Content Include="Img\FSchool.jpg" />
+    <Content Include="Img\Fsport.jpg" />
+    <Content Include="Img\GeuxU.jpg" />
+    <Content Include="Img\hombre.jpg" />
+    <Content Include="Img\icono.jpg" />
+    <Content Include="Img\Jordan.jpg" />
+    <Content Include="Img\k1.jpg" />
+    <Content Include="Img\k2.jpg" />
+    <Content Include="Img\k3.jpg" />
+    <Content Include="Img\k4.jpg" />
+    <Content Include="Img\k5.jpg" />
+    <Content Include="Img\k6.jpg" />
+    <Content Include="Img\loafers.jpg" />
+    <Content Include="Img\MELVIN-HAMILTON.jpg" />
+    <Content Include="Img\mujer.jpg" />
+    <Content Include="Img\Pierrecardin.jpg" />
+    <Content Include="Img\Pierrecardincasual.jpg" />
+    <Content Include="Img\Slippers.jpg" />
+    <Content Include="Img\user.jpg" />
+    <Content Include="Img\Zapatilla-Charol.png" />
+    <Content Include="index.html" />
+    <Content Include="indoexec.html" />
+    <Content Include="Inicio.html" />
+    <Content Include="javascript\java.js" />
+    <Content Include="javascript\jquery.js" />
+    <Content Include="js\app.js" />
+    <Content Include="js\bootstrap.bundle.js" />
+    <Content Include="js\bootstrap.bundle.min.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.1.0.min.js" />
+    <Content Include="js\jquery.flexslider-min.js" />
+    <Content Include="js\jquery.flexslider.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\main1.js" />
+    <Content Include="js\main4.js" />
+    <Content Include="js\main5.js" />
+    <Content Include="js\main6.js" />
+    <Content Include="js\Rocasunzal.js" />
+    <Content Include="KIA Stinger.html" />
+    <Content Include="Login.aspx" />
+    <Content Include="Mercedes-Benz Clase G.html" />
+    <Content Include="NissanMicra.html" />
+    <Content Include="Realintercontinental.html" />
+    <Content Include="RentaCar.html" />
+    <Content Include="RocaSunzal.html" />
+    <Content Include="sd.html" />
+    <Content Include="stp.html" />
+    <Content Include="Suitefrentealmar.html" />
+    <Content Include="Suitejunior.html" />
+    <Content Include="Suitepresidencial.html" />
+    <Content Include="SweetAlert\sweetalert2.all.min.js" />
+    <Content Include="SweetAlert\sweetalert2.js" />
+    <Content Include="Toyota Camry.html" />
+    <Content Include="Triplejp.html" />
+    <Content Include="Triplesuite.html" />
+    <Content Include="Web.config" />
+    <Content Include="Registro.aspx" />
+    <Content Include="PagoRealizado.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agregar.cs" />
+    <Compile Include="datos.cs" />
+    <Compile Include="Conexiones.cs" />
+    <Compile Include="Datos1.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagoRealizado.aspx.cs">
+      <DependentUpon>PagoRealizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagoRealizado.aspx.designer.cs">
+      <DependentUpon>PagoRealizado.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap-grid.css.map" />
+    <Content Include="css\bootstrap-grid.min.css.map" />
+    <Content Include="css\bootstrap-reboot.css.map" />
+    <Content Include="css\bootstrap-reboot.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="js\bootstrap.bundle.js.map" />
+    <Content Include="js\bootstrap.bundle.min.js.map" />
+    <Content Include="js\bootstrap.js.map" />
+    <Content Include="js\bootstrap.min.js.map" />
+    <Content Include="carros\Thumbs.db" />
+    <Content Include="fonts\flexslider-icon.eot" />
+    <Content Include="fonts\flexslider-icon.ttf" />
+    <Content Include="fonts\flexslider-icon.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="font\fontello.eot" />
+    <Content Include="font\fontello.ttf" />
+    <Content Include="font\fontello.woff" />
+    <Content Include="font\fontello.woff2" />
+    <Content Include="hotelesimg\Rocasunzal\c2177e53-70b3-40ff-acff-1e780eb38881.webp" />
+    <Content Include="imagenes\1.webp" />
+    <Content Include="imagenes\1280x570.webp" />
+    <Content Include="imagenes\2021-toyota-rav4-prime-ogi1.webp" />
+    <Content Include="imagenes\7ce7038f_z.webp" />
+    <Content Include="imagenes\casa de graciela" />
+    <Content Include="imagenes\lu.webp" />
+    <Content Include="imagenes\PRIMER AÑO T1.pdf" />
+    <Content Include="imagenes\Reporte_notas_alumnos_2020.pdf" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52959</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44337/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
